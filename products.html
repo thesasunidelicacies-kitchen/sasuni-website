@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our range of gluten-free baked goods and traditional healthy powders. Handcrafted with care.">
+    <title>Our Products - Sasuni Delicacies</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Sasuni Delicacies</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-story.html">Our Story</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-order" onclick="openWhatsApp()">Order Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Handcrafted with care, made for your wellness</p>
+        </div>
+    </section>
+
+    <!-- Product Search -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="search-container">
+                <input
+                    type="search"
+                    id="productSearch"
+                    class="search-input"
+                    placeholder="Search for products..."
+                    aria-label="Search products">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="Gluten-Free Baking">Gluten-Free Baking</button>
+                <button class="filter-btn" data-category="Traditional Powders">Traditional Powders</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Gluten-Free Baking Category -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2>🍞 Gluten-Free Baking</h2>
+                    <p>Our gluten-free baked goods are soft, flavourful, and crafted to surprise you — because gluten-free doesn't have to taste different.</p>
+                </div>
+                <div class="products-grid" id="bakingProducts">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Traditional Powders Category -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2>🌾 Traditional Healthy Powders</h2>
+                    <p>Inspired by age-old recipes, our powders are slow-processed to retain nutrition and authentic taste.</p>
+                </div>
+                <div class="products-grid" id="powdersProducts">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order -->
+    <section class="order-info">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="order-steps">
+                <div class="order-step">
+                    <div class="step-icon">1</div>
+                    <h3>Choose Your Products</h3>
+                    <p>Browse our selection and decide what you'd like to order</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-icon">2</div>
+                    <h3>Contact Us on WhatsApp</h3>
+                    <p>Click the "Order Now" button on any product</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-icon">3</div>
+                    <h3>Confirm Your Order</h3>
+                    <p>We'll confirm availability and delivery details</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-icon">4</div>
+                    <h3>Receive Fresh Products</h3>
+                    <p>Get your order delivered fresh to your doorstep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>We're here to help you choose the perfect products</p>
+            <a href="#" onclick="openWhatsApp()" class="btn btn-large">Chat with Us on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sasuni Delicacies</h3>
+                    <p>Wholesome food crafted with care, not compromise.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <p>WhatsApp: <a href="#" onclick="openWhatsApp()">Click to Chat</a></p>
+                    <p>Email: info@thesasunidelicacies.kitchen</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sasuni Delicacies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()" role="button" aria-label="Contact us on WhatsApp" tabindex="0">
+        <span class="whatsapp-icon">💬</span>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" role="button" aria-label="Back to top" tabindex="0">
+        <span>↑</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Gluten-Free Millet Bread",
+    "category": "Gluten-Free Baking",
+    "description": "Soft, flavourful gluten-free bread made with premium millets and Nikitha's secret recipe.",
+    "price": "₹180",
+    "image": "",
+    "features": [
+      "100% Gluten-Free",
+      "Made with Ancient Millets",
+      "No Artificial Preservatives",
+      "Fresh Baked Daily"
+    ]
+  },
+  {
+    "name": "Healthy Chocolate Chip Cookies",
+    "category": "Gluten-Free Baking",
+    "description": "Indulgent yet healthy cookies that prove gluten-free can be delicious.",
+    "price": "₹220",
+    "image": "",
+    "features": [
+      "Gluten-Free & Wholesome",
+      "Dark Chocolate Chips",
+      "Low Sugar Option",
+      "Small Batch Production"
+    ]
+  },
+  {
+    "name": "Gluten-Free Banana Muffins",
+    "category": "Gluten-Free Baking",
+    "description": "Moist and flavorful muffins made with ripe bananas and nutritious ingredients.",
+    "price": "₹200",
+    "image": "",
+    "features": [
+      "Naturally Sweetened",
+      "Rich in Fiber",
+      "Perfect for Breakfast",
+      "No Refined Flour"
+    ]
+  },
+  {
+    "name": "Multi-Millet Health Mix",
+    "category": "Traditional Powders",
+    "description": "Traditional nutrition blend with 7 ancient millets, slow-processed to retain nutrition.",
+    "price": "₹250",
+    "image": "",
+    "features": [
+      "7 Types of Millets",
+      "Rich in Protein & Fiber",
+      "Traditional Stone-Ground",
+      "No Added Sugar"
+    ]
+  },
+  {
+    "name": "Ragi Malt Powder",
+    "category": "Traditional Powders",
+    "description": "Pure finger millet powder packed with calcium and iron. Perfect for all ages.",
+    "price": "₹180",
+    "image": "",
+    "features": [
+      "High in Calcium",
+      "Naturally Cooling",
+      "Ideal for Growing Kids",
+      "100% Natural"
+    ]
+  },
+  {
+    "name": "Traditional Sathu Maavu",
+    "category": "Traditional Powders",
+    "description": "Authentic multi-grain health mix based on age-old South Indian recipe.",
+    "price": "₹280",
+    "image": "",
+    "features": [
+      "15+ Wholesome Ingredients",
+      "Traditional Recipe",
+      "Supports Digestion",
+      "Energy Boosting"
+    ]
+  },
+  {
+    "name": "Jowar Flour (Sorghum)",
+    "category": "Traditional Powders",
+    "description": "Premium quality jowar flour, gluten-free and perfect for rotis and baking.",
+    "price": "₹120",
+    "image": "",
+    "features": [
+      "100% Pure Jowar",
+      "Gluten-Free Alternative",
+      "Rich in Antioxidants",
+      "Freshly Ground"
+    ]
+  },
+  {
+    "name": "Gluten-Free Pizza Base",
+    "category": "Gluten-Free Baking",
+    "description": "Ready-to-use pizza base that tastes just like regular pizza - but healthier!",
+    "price": "₹150",
+    "image": "",
+    "features": [
+      "Restaurant Quality",
+      "Easy to Use",
+      "Crispy & Delicious",
+      "Kid-Friendly"
+    ]
+  }
+]

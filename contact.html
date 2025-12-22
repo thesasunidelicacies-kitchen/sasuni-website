@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Sasuni Delicacies. Order via WhatsApp or send us a message.">
+    <title>Contact Us - Sasuni Delicacies</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Sasuni Delicacies</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-story.html">Our Story</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#" class="btn-order" onclick="openWhatsApp()">Order Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Ready to experience food that's both healthy and delicious?</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card highlight-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp (Fastest)</h3>
+                    <p>Get instant responses and place orders directly</p>
+                    <a href="#" onclick="openWhatsApp()" class="btn btn-primary">Chat on WhatsApp</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>For detailed inquiries and bulk orders</p>
+                    <a href="mailto:info@thesasunidelicacies.kitchen" class="btn btn-secondary">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p>Follow us for updates and recipes</p>
+                    <a href="#" class="btn btn-secondary">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you soon</p>
+
+                <form id="contactForm" action="https://formsubmit.co/info@thesasunidelicacies.kitchen" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact from Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="Product Inquiry">Product Inquiry</option>
+                            <option value="Place Order">Place Order</option>
+                            <option value="Bulk Order">Bulk Order</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                </form>
+
+                <p class="form-note">Or contact us instantly on <a href="#" onclick="openWhatsApp()">WhatsApp</a> for faster response</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What areas do you deliver to?</h3>
+                    <p>Please contact us on WhatsApp with your location and we'll confirm if we deliver to your area.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I place an order?</h3>
+                    <p>Simply click the WhatsApp button, tell us what you'd like to order, and we'll guide you through the process.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are your products really gluten-free?</h3>
+                    <p>Yes! All our gluten-free products are made in a dedicated environment to prevent cross-contamination.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you take bulk orders?</h3>
+                    <p>Absolutely! Contact us via email or WhatsApp for bulk order inquiries and special pricing.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long do products stay fresh?</h3>
+                    <p>Since we don't use preservatives, we recommend consuming products within the timeframe mentioned on the packaging.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I customize my order?</h3>
+                    <p>Yes! Contact us with your requirements and we'll do our best to accommodate your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>We're just a message away!</p>
+            <a href="#" onclick="openWhatsApp()" class="btn btn-large">Start WhatsApp Chat</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sasuni Delicacies</h3>
+                    <p>Wholesome food crafted with care, not compromise.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <p>WhatsApp: <a href="#" onclick="openWhatsApp()">Click to Chat</a></p>
+                    <p>Email: info@thesasunidelicacies.kitchen</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sasuni Delicacies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <span class="whatsapp-icon">💬</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
