@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - The Sasuni Delicacies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .admin-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .admin-section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .features-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            background: #f5f5f5;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.9rem;
+        }
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .products-table th,
+        .products-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .products-table th {
+            background: #f8f8f8;
+            font-weight: 600;
+        }
+        .products-table img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .json-output {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🔐 Admin Panel - Product Management</h1>
+            <p>Add and manage products for The Sasuni Delicacies</p>
+        </div>
+
+        <div class="success-msg" id="successMsg"></div>
+
+        <!-- Add New Product -->
+        <div class="admin-section">
+            <h2>Add New Product</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name *</label>
+                    <input type="text" id="productName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Regular Cakes">Regular Cakes</option>
+                        <option value="Cupcakes">Cupcakes</option>
+                        <option value="Gluten-Free Baking">Gluten-Free Baking</option>
+                        <option value="Traditional Powders">Traditional Powders</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea id="description" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price *</label>
+                    <input type="text" id="price" placeholder="₹200" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Image Path</label>
+                    <input type="text" id="image" placeholder="images/product.jpeg">
+                    <small>Available images: Cake.jpeg, Cookies.jpeg, Cupcakes.jpeg, Cupcakes2.jpeg, Freshlybaked.jpeg, CookieTray.jpeg</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Features</label>
+                    <div class="features-input">
+                        <input type="text" id="featureInput" placeholder="Enter a feature">
+                        <button type="button" class="btn btn-secondary btn-small" onclick="addFeature()">Add</button>
+                    </div>
+                    <ul class="features-list" id="featuresList"></ul>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Product</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+            </form>
+        </div>
+
+        <!-- Current Products -->
+        <div class="admin-section">
+            <h2>Current Products</h2>
+            <div id="productsTable"></div>
+        </div>
+
+        <!-- Generated JSON -->
+        <div class="admin-section">
+            <h2>Updated products.json</h2>
+            <p>Copy this JSON and paste it into your <code>products.json</code> file:</p>
+            <button class="btn btn-secondary btn-small" onclick="copyJSON()">Copy to Clipboard</button>
+            <div class="json-output" id="jsonOutput"></div>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="btn btn-secondary">Back to Website</a>
+        </p>
+    </div>
+
+    <script>
+        let products = [];
+        let currentFeatures = [];
+
+        // Load products on page load
+        async function loadProducts() {
+            try {
+                const response = await fetch('products.json');
+                products = await response.json();
+                displayProducts();
+                updateJSON();
+            } catch (error) {
+                console.error('Error loading products:', error);
+                products = [];
+            }
+        }
+
+        // Display products in table
+        function displayProducts() {
+            const table = document.getElementById('productsTable');
+            if (products.length === 0) {
+                table.innerHTML = '<p>No products yet. Add your first product!</p>';
+                return;
+            }
+
+            let html = `
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            products.forEach((product, index) => {
+                html += `
+                    <tr>
+                        <td><img src="${product.image || 'images/Cake.jpeg'}" alt="${product.name}"></td>
+                        <td><strong>${product.name}</strong></td>
+                        <td>${product.category}</td>
+                        <td>${product.price}</td>
+                        <td>
+                            <button class="btn btn-secondary btn-small" onclick="deleteProduct(${index})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += '</tbody></table>';
+            table.innerHTML = html;
+        }
+
+        // Update JSON output
+        function updateJSON() {
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.textContent = JSON.stringify(products, null, 2);
+        }
+
+        // Add feature to list
+        function addFeature() {
+            const input = document.getElementById('featureInput');
+            const feature = input.value.trim();
+
+            if (feature) {
+                currentFeatures.push(feature);
+                updateFeaturesList();
+                input.value = '';
+            }
+        }
+
+        // Update features list display
+        function updateFeaturesList() {
+            const list = document.getElementById('featuresList');
+            list.innerHTML = currentFeatures.map((feature, index) => `
+                <li>
+                    ${feature}
+                    <button type="button" class="btn btn-secondary btn-small" onclick="removeFeature(${index})">Remove</button>
+                </li>
+            `).join('');
+        }
+
+        // Remove feature
+        function removeFeature(index) {
+            currentFeatures.splice(index, 1);
+            updateFeaturesList();
+        }
+
+        // Handle form submission
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newProduct = {
+                name: document.getElementById('productName').value.trim(),
+                category: document.getElementById('category').value,
+                description: document.getElementById('description').value.trim(),
+                price: document.getElementById('price').value.trim(),
+                image: document.getElementById('image').value.trim() || '',
+                features: [...currentFeatures]
+            };
+
+            products.push(newProduct);
+            displayProducts();
+            updateJSON();
+            resetForm();
+
+            // Show success message
+            const msg = document.getElementById('successMsg');
+            msg.textContent = `✓ Product "${newProduct.name}" added successfully! Copy the JSON below to update your products.json file.`;
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 5000);
+        });
+
+        // Reset form
+        function resetForm() {
+            document.getElementById('productForm').reset();
+            currentFeatures = [];
+            updateFeaturesList();
+        }
+
+        // Delete product
+        function deleteProduct(index) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                products.splice(index, 1);
+                displayProducts();
+                updateJSON();
+            }
+        }
+
+        // Copy JSON to clipboard
+        function copyJSON() {
+            const jsonText = document.getElementById('jsonOutput').textContent;
+            navigator.clipboard.writeText(jsonText).then(() => {
+                alert('JSON copied to clipboard! Now paste it into your products.json file.');
+            });
+        }
+
+        // Enter key on feature input
+        document.getElementById('featureInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addFeature();
+            }
+        });
+
+        // Load products on page load
+        loadProducts();
+    </script>
+</body>
+</html>

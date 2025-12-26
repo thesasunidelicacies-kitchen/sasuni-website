@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="description" content="Explore our range of gluten-free baked goods and traditional healthy powders. Handcrafted with care.">
-    <title>Our Products - Sasuni Delicacies</title>
+    <title>Our Products - The Sasuni Delicacies</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +15,8 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1>Sasuni Delicacies</h1>
+                <img src="images/Logo.jpeg" alt="The Sasuni Delicacies Logo" class="logo">
+                <h1>The Sasuni Delicacies</h1>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
@@ -51,8 +55,10 @@
             </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Products</button>
-                <button class="filter-btn" data-category="Gluten-Free Baking">Gluten-Free Baking</button>
-                <button class="filter-btn" data-category="Traditional Powders">Traditional Powders</button>
+                <button class="filter-btn" data-category="Regular Cakes">Regular Cakes</button>
+                <button class="filter-btn" data-category="Cupcakes">Cupcakes</button>
+                <button class="filter-btn" data-category="Gluten-Free Baking">Gluten-Free</button>
+                <button class="filter-btn" data-category="Traditional Powders">Powders</button>
             </div>
         </div>
     </section>
@@ -60,22 +66,64 @@
     <!-- Products Grid -->
     <section class="products-section">
         <div class="container">
+            <!-- Regular Cakes Category -->
+            <div class="category-section">
+                <div class="category-header-with-image">
+                    <div class="category-text">
+                        <h2>🎂 Regular Cakes</h2>
+                        <p>Classic celebration cakes baked fresh daily. Perfect for birthdays, parties, and special moments.</p>
+                    </div>
+                    <div class="category-image">
+                        <img src="images/Cake.jpeg" alt="Delicious cakes" loading="lazy">
+                    </div>
+                </div>
+                <div class="products-grid" id="regularCakesProducts">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Cupcakes Category -->
+            <div class="category-section">
+                <div class="category-header-with-image">
+                    <div class="category-text">
+                        <h2>🧁 Cupcakes</h2>
+                        <p>Perfectly portioned treats ideal for parties, gifting, and personal indulgence. Minimum order 6 pieces.</p>
+                    </div>
+                    <div class="category-image">
+                        <img src="images/Cupcakes2.jpeg" alt="Delicious cupcakes" loading="lazy">
+                    </div>
+                </div>
+                <div class="products-grid" id="cupcakesProducts">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+
             <!-- Gluten-Free Baking Category -->
             <div class="category-section">
-                <div class="category-header">
-                    <h2>🍞 Gluten-Free Baking</h2>
-                    <p>Our gluten-free baked goods are soft, flavourful, and crafted to surprise you — because gluten-free doesn't have to taste different.</p>
+                <div class="category-header-with-image">
+                    <div class="category-text">
+                        <h2>🌾 Gluten-Free Baking</h2>
+                        <p>Delicious cakes made entirely gluten-free. Same great taste, healthier choice for everyone.</p>
+                    </div>
+                    <div class="category-image">
+                        <img src="images/Freshlybaked.jpeg" alt="Fresh gluten-free baking" loading="lazy">
+                    </div>
                 </div>
-                <div class="products-grid" id="bakingProducts">
+                <div class="products-grid" id="glutenFreeProducts">
                     <!-- Products will be loaded dynamically -->
                 </div>
             </div>
 
             <!-- Traditional Powders Category -->
             <div class="category-section">
-                <div class="category-header">
-                    <h2>🌾 Traditional Healthy Powders</h2>
-                    <p>Inspired by age-old recipes, our powders are slow-processed to retain nutrition and authentic taste.</p>
+                <div class="category-header-with-image">
+                    <div class="category-text">
+                        <h2>⚡ Traditional Healthy Powders</h2>
+                        <p>Inspired by age-old recipes, our powders are slow-processed to retain nutrition and authentic taste.</p>
+                    </div>
+                    <div class="category-image">
+                        <img src="images/Cookies.jpeg" alt="Traditional healthy recipes" loading="lazy">
+                    </div>
                 </div>
                 <div class="products-grid" id="powdersProducts">
                     <!-- Products will be loaded dynamically -->
@@ -127,7 +175,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Sasuni Delicacies</h3>
+                    <h3>The Sasuni Delicacies</h3>
                     <p>Wholesome food crafted with care, not compromise.</p>
                 </div>
                 <div class="footer-section">
@@ -146,7 +194,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Sasuni Delicacies. All rights reserved.</p>
+                <p>&copy; 2024 The Sasuni Delicacies. All rights reserved.</p>
             </div>
         </div>
     </footer>

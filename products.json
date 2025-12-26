@@ -1,41 +1,170 @@
 [
   {
-    "name": "Gluten-Free Millet Bread",
+    "name": "Vanilla Cake",
+    "category": "Regular Cakes",
+    "description": "Classic vanilla cake with soft, fluffy layers and rich buttercream frosting. Perfect for all celebrations.",
+    "price": "₹400",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "Premium Vanilla Extract",
+      "Moist & Fluffy",
+      "Custom Designs Available",
+      "Fresh Baked Daily",
+      "Made to Order"
+    ]
+  },
+  {
+    "name": "Chocolate Cake",
+    "category": "Regular Cakes",
+    "description": "Rich chocolate cake layered with smooth chocolate ganache. A chocolate lover's dream.",
+    "price": "₹450",
+    "image": "images/Cake.jpeg",
+    "features": [
+      "Premium Cocoa",
+      "Chocolate Ganache",
+      "Moist & Decadent",
+      "Perfect for Birthdays",
+      "Made Fresh"
+    ]
+  },
+  {
+    "name": "Marble Cake",
+    "category": "Regular Cakes",
+    "description": "Beautiful swirl of vanilla and chocolate in every slice. Best of both worlds in one cake.",
+    "price": "₹420",
+    "image": "images/Cake.jpeg",
+    "features": [
+      "Vanilla & Chocolate Swirl",
+      "Unique Pattern",
+      "Soft Texture",
+      "Visually Stunning",
+      "Custom Sizes"
+    ]
+  },
+  {
+    "name": "Tutti Frutti Cake",
+    "category": "Regular Cakes",
+    "description": "Colorful and delightful cake studded with tutti frutti gems. A festive treat for all ages.",
+    "price": "₹430",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "Colorful & Fun",
+      "Premium Tutti Frutti",
+      "Soft Vanilla Base",
+      "Kids Favorite",
+      "Party Perfect"
+    ]
+  },
+  {
+    "name": "Butterscotch Cake",
+    "category": "Regular Cakes",
+    "description": "Indulgent butterscotch flavored cake with crunchy caramel bits. Sweet, rich and irresistible.",
+    "price": "₹450",
+    "image": "images/Cake.jpeg",
+    "features": [
+      "Rich Butterscotch Flavor",
+      "Caramel Crunch",
+      "Creamy Frosting",
+      "Premium Ingredients",
+      "Made to Order"
+    ]
+  },
+  {
+    "name": "Vanilla Cupcakes",
+    "category": "Cupcakes",
+    "description": "Perfectly portioned vanilla cupcakes topped with swirled buttercream. Ideal for parties and gifting.",
+    "price": "₹25 each",
+    "image": "images/Cupcakes.jpeg",
+    "features": [
+      "Individual Portions",
+      "Decorated Beautifully",
+      "Minimum 6 pieces",
+      "Fresh & Moist",
+      "Custom Toppers Available"
+    ]
+  },
+  {
+    "name": "Chocolate Cupcakes",
+    "category": "Cupcakes",
+    "description": "Rich chocolate cupcakes with chocolate frosting and sprinkles. Mini indulgence in every bite.",
+    "price": "₹30 each",
+    "image": "images/Cupcakes.jpeg",
+    "features": [
+      "Premium Chocolate",
+      "Colorful Sprinkles",
+      "Minimum 6 pieces",
+      "Party Ready",
+      "Kid-Friendly"
+    ]
+  },
+  {
+    "name": "Marble Cupcakes",
+    "category": "Cupcakes",
+    "description": "Cute cupcakes with vanilla-chocolate marble swirl. Perfect blend of two classic flavors.",
+    "price": "₹28 each",
+    "image": "images/Cupcakes.jpeg",
+    "features": [
+      "Dual Flavor Swirl",
+      "Beautifully Decorated",
+      "Minimum 6 pieces",
+      "Fresh Daily",
+      "Great for Events"
+    ]
+  },
+  {
+    "name": "Tutti Frutti Cupcakes",
+    "category": "Cupcakes",
+    "description": "Colorful cupcakes loaded with tutti frutti bits. Fun and festive for every celebration.",
+    "price": "₹30 each",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "Colorful & Festive",
+      "Loaded Tutti Frutti",
+      "Minimum 6 pieces",
+      "Kids Love It",
+      "Party Favorite"
+    ]
+  },
+  {
+    "name": "Butterscotch Cupcakes",
+    "category": "Cupcakes",
+    "description": "Delightful butterscotch cupcakes with caramel drizzle. Sweet luxury in cupcake form.",
+    "price": "₹32 each",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "Butterscotch Flavor",
+      "Caramel Drizzle",
+      "Minimum 6 pieces",
+      "Premium Quality",
+      "Made Fresh"
+    ]
+  },
+  {
+    "name": "Gluten-Free Vanilla Cake",
     "category": "Gluten-Free Baking",
-    "description": "Soft, flavourful gluten-free bread made with premium millets and Nikitha's secret recipe.",
-    "price": "₹180",
-    "image": "",
+    "description": "Classic vanilla cake made entirely gluten-free. Same great taste, healthier choice.",
+    "price": "₹550",
+    "image": "images/Cupcakes2.jpeg",
     "features": [
       "100% Gluten-Free",
-      "Made with Ancient Millets",
-      "No Artificial Preservatives",
-      "Fresh Baked Daily"
+      "Soft & Moist",
+      "No Compromise on Taste",
+      "Made with Millet Flour",
+      "Healthy & Delicious"
     ]
   },
   {
-    "name": "Healthy Chocolate Chip Cookies",
+    "name": "Gluten-Free Chocolate Cake",
     "category": "Gluten-Free Baking",
-    "description": "Indulgent yet healthy cookies that prove gluten-free can be delicious.",
-    "price": "₹220",
-    "image": "",
+    "description": "Rich chocolate cake without the gluten. Decadent, healthy, and absolutely delicious.",
+    "price": "₹600",
+    "image": "images/Cake.jpeg",
     "features": [
-      "Gluten-Free & Wholesome",
-      "Dark Chocolate Chips",
-      "Low Sugar Option",
-      "Small Batch Production"
-    ]
-  },
-  {
-    "name": "Gluten-Free Banana Muffins",
-    "category": "Gluten-Free Baking",
-    "description": "Moist and flavorful muffins made with ripe bananas and nutritious ingredients.",
-    "price": "₹200",
-    "image": "",
-    "features": [
-      "Naturally Sweetened",
-      "Rich in Fiber",
-      "Perfect for Breakfast",
-      "No Refined Flour"
+      "100% Gluten-Free",
+      "Premium Cocoa",
+      "Moist & Rich",
+      "Health-Conscious Choice",
+      "Made to Order"
     ]
   },
   {
@@ -43,7 +172,7 @@
     "category": "Traditional Powders",
     "description": "Traditional nutrition blend with 7 ancient millets, slow-processed to retain nutrition.",
     "price": "₹250",
-    "image": "",
+    "image": "images/CookieTray.jpeg",
     "features": [
       "7 Types of Millets",
       "Rich in Protein & Fiber",
@@ -56,7 +185,7 @@
     "category": "Traditional Powders",
     "description": "Pure finger millet powder packed with calcium and iron. Perfect for all ages.",
     "price": "₹180",
-    "image": "",
+    "image": "images/Cupcakes2.jpeg",
     "features": [
       "High in Calcium",
       "Naturally Cooling",
@@ -69,7 +198,7 @@
     "category": "Traditional Powders",
     "description": "Authentic multi-grain health mix based on age-old South Indian recipe.",
     "price": "₹280",
-    "image": "",
+    "image": "images/Cake.jpeg",
     "features": [
       "15+ Wholesome Ingredients",
       "Traditional Recipe",
@@ -82,7 +211,7 @@
     "category": "Traditional Powders",
     "description": "Premium quality jowar flour, gluten-free and perfect for rotis and baking.",
     "price": "₹120",
-    "image": "",
+    "image": "images/Freshlybaked.jpeg",
     "features": [
       "100% Pure Jowar",
       "Gluten-Free Alternative",
@@ -95,12 +224,97 @@
     "category": "Gluten-Free Baking",
     "description": "Ready-to-use pizza base that tastes just like regular pizza - but healthier!",
     "price": "₹150",
-    "image": "",
+    "image": "images/CookieTray.jpeg",
     "features": [
       "Restaurant Quality",
       "Easy to Use",
       "Crispy & Delicious",
       "Kid-Friendly"
+    ]
+  },
+  {
+    "name": "Chocolate Fudge Cake",
+    "category": "Gluten-Free Baking",
+    "description": "Rich, decadent chocolate cake with layers of moist sponge and smooth chocolate frosting. Perfect for celebrations.",
+    "price": "₹500",
+    "image": "images/Cake.jpeg",
+    "features": [
+      "100% Gluten-Free",
+      "Premium Dark Chocolate",
+      "Moist & Fluffy",
+      "Made to Order",
+      "No Artificial Flavors"
+    ]
+  },
+  {
+    "name": "Classic Vanilla Cake",
+    "category": "Gluten-Free Baking",
+    "description": "Light and airy vanilla sponge with creamy vanilla buttercream. A timeless favorite for any occasion.",
+    "price": "₹450",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "100% Gluten-Free",
+      "Pure Vanilla Extract",
+      "Soft & Tender",
+      "Custom Decorations Available",
+      "Fresh Ingredients"
+    ]
+  },
+  {
+    "name": "Banana Walnut Cake",
+    "category": "Gluten-Free Baking",
+    "description": "Naturally sweetened with ripe bananas, topped with crunchy walnuts. Wholesome and delicious.",
+    "price": "₹400",
+    "image": "images/Cupcakes.jpeg",
+    "features": [
+      "Naturally Sweetened",
+      "100% Gluten-Free",
+      "Rich in Fiber",
+      "Omega-3 from Walnuts",
+      "No Refined Sugar"
+    ]
+  },
+  {
+    "name": "Carrot Cake with Cream Cheese Frosting",
+    "category": "Gluten-Free Baking",
+    "description": "Spiced carrot cake loaded with fresh carrots, topped with tangy cream cheese frosting.",
+    "price": "₹480",
+    "image": "images/CupCakeHold.jpeg",
+    "features": [
+      "100% Gluten-Free",
+      "Fresh Carrots & Spices",
+      "Cream Cheese Frosting",
+      "Nutrient-Rich",
+      "Made Fresh Daily"
+    ]
+  },
+  {
+    "name": "Assorted Cookie Box",
+    "category": "Gluten-Free Baking",
+    "description": "A delightful variety of handcrafted cookies - chocolate chip, oatmeal, almond, and more in one box.",
+    "price": "₹300",
+    "image": "images/CookieTray.jpeg",
+    "features": [
+      "6+ Varieties",
+      "Freshly Baked Daily",
+      "Perfect for Gifting",
+      "Gluten-Free Options",
+      "Small Batch Production"
+    ]
+  },
+  {
+    "name": "Complete Health Powder Mix",
+    "category": "Traditional Powders",
+    "description": "All-in-one nutritional powerhouse combining the best of traditional grains, nuts, and seeds for complete wellness.",
+    "price": "₹320",
+    "image": "images/Cupcakes2.jpeg",
+    "features": [
+      "20+ Natural Ingredients",
+      "High Protein & Fiber",
+      "Supports Immunity",
+      "Energy Boosting",
+      "Traditional Recipe",
+      "No Preservatives"
     ]
   }
 ]
