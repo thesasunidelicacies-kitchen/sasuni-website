@@ -7,7 +7,7 @@ const CONFIG = {
     // Update this with your actual WhatsApp number (include country code, no + or spaces)
     // Example: For +91 9876543210, use: 919876543210
     whatsappNumber: '919876543210', // CHANGE THIS TO YOUR WHATSAPP NUMBER
-    whatsappMessage: 'Hi! I would like to know more about Sasuni Delicacies products.',
+    whatsappMessage: 'Hi! I would like to know more about The Sasuni Delicacies products.',
     productsFile: 'products.json',
     // Analytics Configuration
     googleAnalyticsId: '', // Add your GA4 Measurement ID (e.g., 'G-XXXXXXXXXX')
@@ -72,11 +72,13 @@ async function loadProducts() {
         }
 
         // Load all products on products page
-        const bakingContainer = document.getElementById('bakingProducts');
+        const regularCakesContainer = document.getElementById('regularCakesProducts');
+        const cupcakesContainer = document.getElementById('cupcakesProducts');
+        const glutenFreeContainer = document.getElementById('glutenFreeProducts');
         const powdersContainer = document.getElementById('powdersProducts');
 
-        if (bakingContainer && powdersContainer) {
-            displayProductsByCategory(products, bakingContainer, powdersContainer);
+        if (regularCakesContainer || cupcakesContainer || glutenFreeContainer || powdersContainer) {
+            displayProductsByCategory(products);
         }
 
     } catch (error) {
@@ -104,17 +106,40 @@ function displayFeaturedProducts(products, container) {
 }
 
 // ========== Display Products by Category (Products Page) ==========
-function displayProductsByCategory(products, bakingContainer, powdersContainer) {
-    const bakingProducts = products.filter(p => p.category === 'Gluten-Free Baking');
-    const powderProducts = products.filter(p => p.category === 'Traditional Powders');
+function displayProductsByCategory(products) {
+    const regularCakesContainer = document.getElementById('regularCakesProducts');
+    const cupcakesContainer = document.getElementById('cupcakesProducts');
+    const glutenFreeContainer = document.getElementById('glutenFreeProducts');
+    const powdersContainer = document.getElementById('powdersProducts');
 
-    bakingContainer.innerHTML = bakingProducts.length > 0
-        ? bakingProducts.map(product => createProductCard(product)).join('')
-        : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    const regularCakes = products.filter(p => p.category === 'Regular Cakes');
+    const cupcakes = products.filter(p => p.category === 'Cupcakes');
+    const glutenFree = products.filter(p => p.category === 'Gluten-Free Baking');
+    const powders = products.filter(p => p.category === 'Traditional Powders');
 
-    powdersContainer.innerHTML = powderProducts.length > 0
-        ? powderProducts.map(product => createProductCard(product)).join('')
-        : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    if (regularCakesContainer) {
+        regularCakesContainer.innerHTML = regularCakes.length > 0
+            ? regularCakes.map(product => createProductCard(product)).join('')
+            : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    }
+
+    if (cupcakesContainer) {
+        cupcakesContainer.innerHTML = cupcakes.length > 0
+            ? cupcakes.map(product => createProductCard(product)).join('')
+            : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    }
+
+    if (glutenFreeContainer) {
+        glutenFreeContainer.innerHTML = glutenFree.length > 0
+            ? glutenFree.map(product => createProductCard(product)).join('')
+            : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    }
+
+    if (powdersContainer) {
+        powdersContainer.innerHTML = powders.length > 0
+            ? powders.map(product => createProductCard(product)).join('')
+            : '<p style="text-align: center; color: #666;">No products in this category yet.</p>';
+    }
 }
 
 // ========== Create Product Card HTML ==========
@@ -363,9 +388,15 @@ function initLazyLoading() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.addEventListener('load', () => {
+
+                    // Check if image is already loaded
+                    if (img.complete && img.naturalHeight !== 0) {
                         img.classList.add('loaded');
-                    });
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                        });
+                    }
                     observer.unobserve(img);
                 }
             });
@@ -501,6 +532,6 @@ if ('serviceWorker' in navigator) {
 }
 
 // ========== Console Message ==========
-console.log('%c🌾 Sasuni Delicacies Website', 'color: #8B6F47; font-size: 20px; font-weight: bold;');
+console.log('%c🌾 The Sasuni Delicacies Website', 'color: #8B6F47; font-size: 20px; font-weight: bold;');
 console.log('%cRemember to update your WhatsApp number in js/main.js!', 'color: #C17A5C; font-size: 14px;');
 console.log('%cEnhanced with SEO, Performance & Analytics', 'color: #8B9D83; font-size: 12px;');
