@@ -110,8 +110,13 @@
 <body>
     <div class="admin-container">
         <div class="admin-header">
-            <h1>🔐 Admin Panel - Product Management</h1>
-            <p>Add and manage products for The Sasuni Delicacies</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>🔐 Admin Panel - Product Management</h1>
+                    <p>Add and manage products for The Sasuni Delicacies</p>
+                </div>
+                <button onclick="logout()" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 1px solid white;">Logout</button>
+            </div>
         </div>
 
         <div class="success-msg" id="successMsg"></div>
@@ -186,6 +191,34 @@
     </div>
 
     <script>
+        // Security: Check authentication
+        function checkAuth() {
+            const isAuth = sessionStorage.getItem('adminAuth');
+            const loginTime = sessionStorage.getItem('adminLoginTime');
+            const currentTime = Date.now();
+            const SESSION_TIMEOUT = 3600000; // 1 hour in milliseconds
+
+            // Check if authenticated and session not expired
+            if (!isAuth || !loginTime || (currentTime - loginTime) > SESSION_TIMEOUT) {
+                // Redirect to login
+                window.location.href = 'admin-login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('adminAuth');
+            sessionStorage.removeItem('adminLoginTime');
+            window.location.href = 'admin-login.html';
+        }
+
+        // Check authentication on page load
+        if (!checkAuth()) {
+            // Will redirect to login if not authenticated
+        }
+
         let products = [];
         let currentFeatures = [];
 
